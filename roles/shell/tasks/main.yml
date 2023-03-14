@@ -1,0 +1,13 @@
+---
+- name: Install packages
+  become: true
+  ansible.builtin.apt:
+    pkg: '{{ shell_packages }}'
+
+- name: Link my zsh config file
+  become: false
+  ansible.builtin.file:
+    src: ~/repos/dotfiles/.zshrc
+    dest: ~/.zshrc
+    force: true
+    state: link

@@ -1,0 +1,5 @@
+---
+shell_packages:
+  - git
+  - zsh
+  - zsh-syntax-highlighting
