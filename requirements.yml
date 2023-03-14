@@ -1,4 +1,5 @@
 ---
 roles:
+  - gantsign.oh-my-zsh
   - geerlingguy.ansible
   - geerlingguy.pip

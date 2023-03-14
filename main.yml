@@ -8,5 +8,6 @@
 
   roles:
     - update_os
+    - gantsign.oh-my-zsh
     - geerlingguy.pip
     - geerlingguy.ansible
