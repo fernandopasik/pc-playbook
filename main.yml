@@ -1,0 +1,4 @@
+---
+- name: PC Playbook
+  hosts: all
+  become: true

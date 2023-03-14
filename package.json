@@ -1,0 +1,34 @@
+{
+  "name": "pc-playbook",
+  "description": "",
+  "repository": "fernandopasik/pc-playbook",
+  "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "ansible:check": "ansible-playbook --syntax-check main.yml",
+    "ansible:lint": "ansible-lint",
+    "clean": "del galaxy",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "galaxy": "ansible-galaxy install -r requirements.yml",
+    "lint": "eslint . --ext yml,yaml",
+    "prepare": "husky install",
+    "setup": "ansible-playbook main.yml",
+    "verify": "npm run format:check && npm run lint && npm run ansible:lint && npm run ansible:check"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-yml": "^1.5.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-pkg": "^0.17.1",
+    "prettier-plugin-sh": "^0.12.8"
+  }
+}

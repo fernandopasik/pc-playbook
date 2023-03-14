@@ -1,0 +1,8 @@
+---
+# .ansible-lint
+profile: production
+exclude_paths:
+  - .github
+  - node_modules
+  - galaxy
+  - venv
