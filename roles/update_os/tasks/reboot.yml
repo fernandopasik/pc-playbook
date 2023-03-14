@@ -1,0 +1,16 @@
+---
+- name: Determining the system requires a reboot
+  ansible.builtin.stat:
+    path: /var/run/reboot-required
+  register: reboot_required
+
+- name: Determining if any packages require a reboot
+  ansible.builtin.stat:
+    path: /var/run/reboot-required.pkgs
+  register: reboot_required_pkgs
+
+- name: Perform reboot
+  become: true
+  ansible.builtin.reboot:
+    reboot_timeout: 1000
+  when: reboot_required.stat.exists or reboot_required_pkgs.stat.exists

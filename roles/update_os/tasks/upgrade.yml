@@ -1,0 +1,5 @@
+---
+- name: Update OS packages
+  become: true
+  ansible.builtin.apt:
+    upgrade: full

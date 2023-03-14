@@ -1,0 +1,5 @@
+---
+- name: Install recommended OS packages
+  become: true
+  ansible.builtin.apt:
+    pkg: '{{ recommended_packages }}'
