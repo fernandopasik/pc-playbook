@@ -5,3 +5,5 @@
 
   roles:
     - update_os
+    - geerlingguy.pip
+    - geerlingguy.ansible

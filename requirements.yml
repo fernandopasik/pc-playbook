@@ -1,2 +1,4 @@
 ---
-roles: []
+roles:
+  - geerlingguy.ansible
+  - geerlingguy.pip
