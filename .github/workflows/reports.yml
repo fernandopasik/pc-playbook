@@ -8,11 +8,11 @@ on:
 jobs:
   report-lint:
     name: Lint Report
+    runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
       checks: write
-    runs-on: ubuntu-latest
     steps:
       - name: Publish Report
         uses: dorny/test-reporter@v1
