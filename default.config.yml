@@ -1,6 +1,2 @@
 ---
-ansible_install_method: pip
-pip_install_packages:
-  - name: docker
-users:
-  - username: '{{ ansible_user }}'
+shell_user: '{{ ansible_user }}'
