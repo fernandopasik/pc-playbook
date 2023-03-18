@@ -16,3 +16,21 @@
   ansible.builtin.apt:
     name: nodejs
     state: present
+
+- name: Install Node package managers
+  become: true
+  ansible.builtin.command:
+    cmd: corepack enable
+  register: corepack
+  changed_when: false
+
+- name: Install Node global packages
+  become: true
+  community.general.npm:
+    name: '{{ item }}'
+    global: true
+  loop:
+    - npm
+    - npm-check-updates
+    - pure-prompt
+    - yo
