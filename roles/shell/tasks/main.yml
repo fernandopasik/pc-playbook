@@ -42,4 +42,5 @@
   ansible.builtin.copy:
     dest: ~/.profile
     content: ''
+    mode: '0644'
     force: false
