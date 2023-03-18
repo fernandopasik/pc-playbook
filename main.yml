@@ -13,8 +13,6 @@
 
   roles:
     - update_os
-    - geerlingguy.pip
-    - geerlingguy.ansible
     - git
     - github
     - shell
