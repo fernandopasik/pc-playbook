@@ -1,5 +1,2 @@
 ---
-shell_packages:
-  - git
-  - zsh
-  - zsh-syntax-highlighting
+dotfiles_dir: '{{ repos_dir }}/dotfiles'

@@ -1,13 +1,21 @@
 ---
-- name: Install packages
+- name: Install zsh and plugins
   become: true
   ansible.builtin.apt:
-    pkg: '{{ shell_packages }}'
+    pkg:
+      - zsh
+      - zsh-syntax-highlighting
+
+- name: Set as default shell
+  become: true
+  ansible.builtin.user:
+    name: '{{ ansible_user }}'
+    shell: /usr/bin/zsh
 
 - name: Link my zsh config file
-  become: false
   ansible.builtin.file:
-    src: ~/repos/dotfiles/.zshrc
+    src: '{{ dotfiles_dir }}/.zshrc'
     dest: ~/.zshrc
     force: true
+    mode: '0644'
     state: link
