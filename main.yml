@@ -17,4 +17,5 @@
     - gantsign.oh-my-zsh
     - geerlingguy.pip
     - geerlingguy.ansible
+    - git
     - shell

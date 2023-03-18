@@ -1,0 +1,37 @@
+---
+- name: Install Git packages
+  ansible.builtin.apt:
+    pkg:
+      - git
+      - git-lfs
+
+- name: Create repos folder
+  ansible.builtin.file:
+    path: '{{ repos_dir }}'
+    state: directory
+    owner: '{{ ansible_user }}'
+    group: '{{ ansible_user }}'
+    mode: '0755'
+
+- name: Clone dotfiles repository
+  ansible.builtin.git:
+    repo: '{{ dotfiles_repo }}'
+    dest: '{{ dotfiles_dir }}'
+
+- name: Link gitconfig file from dotfiles repo
+  ansible.builtin.file:
+    src: '{{ dotfiles_dir }}/.gitconfig'
+    dest: ~/.gitconfig
+    force: true
+    mode: '0644'
+    state: link
+
+- name: Configure git user name and email
+  ansible.builtin.copy:
+    dest: ~/.gitconfig.local
+    content: |
+      [user]
+        name = {{ git_user_name }}
+        email = {{ git_user_email }}
+    force: false
+    mode: '0644'
