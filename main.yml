@@ -1,7 +1,6 @@
 ---
 - name: PC Playbook
   hosts: all
-  become: true
 
   vars_files:
     - default.config.yml
