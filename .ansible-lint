@@ -6,3 +6,5 @@ exclude_paths:
   - node_modules
   - galaxy
   - venv
+skip_list:
+  - latest[git]
