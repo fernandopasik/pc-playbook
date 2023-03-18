@@ -13,6 +13,7 @@
 
   roles:
     - update_os
+    - system
     - git
     - github
     - shell
