@@ -18,4 +18,5 @@
     - geerlingguy.pip
     - geerlingguy.ansible
     - git
+    - github
     - shell

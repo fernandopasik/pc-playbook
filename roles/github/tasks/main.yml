@@ -1,0 +1,23 @@
+---
+- name: Add GitHub apt key
+  ansible.builtin.apt_key:
+    url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+    state: present
+
+- name: Add GitHub repository into sources list
+  ansible.builtin.apt_repository:
+    repo: 'deb [arch=amd64] https://cli.github.com/packages stable main'
+    state: present
+
+- name: Install GitHub CLI
+  ansible.builtin.apt:
+    name: gh
+    state: present
+
+- name: Configure GitHub cli
+  ansible.builtin.shell: |
+    gh config set pager cat
+    gh config set editor 'code --wait'
+    gh config set git_protocol https
+  register: github_cli_config
+  changed_when: false
