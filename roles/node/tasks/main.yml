@@ -14,10 +14,9 @@
   when: should_be_root
 
 - name: Install node
-  become: true
-  ansible.builtin.apt:
+  become: '{{ should_be_root }}'
+  ansible.builtin.package:
     name: nodejs
-    state: present
 
 - name: Download nvm install script
   ansible.builtin.get_url:

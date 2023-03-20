@@ -1,8 +1,8 @@
 ---
 - name: Install zsh and plugins
-  become: true
-  ansible.builtin.apt:
-    pkg:
+  become: '{{ should_be_root }}'
+  ansible.builtin.package:
+    name:
       - zsh
       - zsh-syntax-highlighting
 
