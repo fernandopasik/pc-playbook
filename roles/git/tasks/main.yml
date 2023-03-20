@@ -1,7 +1,8 @@
 ---
 - name: Install Git packages
-  ansible.builtin.apt:
-    pkg:
+  become: '{{ should_be_root }}'
+  ansible.builtin.package:
+    name:
       - git
       - git-lfs
 
