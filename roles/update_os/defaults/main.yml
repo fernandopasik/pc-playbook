@@ -6,8 +6,6 @@ recommended_packages:
   - htop
   - iperf3
   - neofetch
-  - python3
-  - python3-pip
   - rsync
   - shellcheck
   - wget
