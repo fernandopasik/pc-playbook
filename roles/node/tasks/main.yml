@@ -39,13 +39,6 @@
   register: nvm_configure
   changed_when: false
 
-- name: Install Node package managers
-  become: true
-  ansible.builtin.command:
-    cmd: corepack enable
-  register: corepack
-  changed_when: false
-
 - name: Install Node global packages
   become: true
   community.general.npm:
@@ -57,3 +50,10 @@
     - npm-check-updates
     - pure-prompt
     - yo
+
+- name: Install Node package managers
+  become: true
+  ansible.builtin.command:
+    cmd: corepack enable
+  register: corepack
+  changed_when: false
