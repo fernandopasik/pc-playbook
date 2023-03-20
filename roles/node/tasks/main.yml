@@ -34,8 +34,8 @@
 - name: Configure nvm
   ansible.builtin.shell: |
     . {{ ansible_env.HOME }}/.nvm/nvm.sh
-    nvm alias default system
     nvm install --lts --no-progress
+    nvm alias default system
   register: nvm_configure
   changed_when: false
 
