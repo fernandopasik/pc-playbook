@@ -52,6 +52,7 @@
     name: '{{ item }}'
     global: true
   loop:
+    - corepack
     - npm
     - npm-check-updates
     - pure-prompt
