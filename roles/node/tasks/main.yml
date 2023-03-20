@@ -19,6 +19,19 @@
     name: nodejs
     state: present
 
+- name: Download nvm install script
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh
+    dest: /tmp/nvm_install.sh
+    mode: '0755'
+
+- name: Run nvm install script
+  ansible.builtin.command: zsh /tmp/nvm_install.sh
+  args:
+    creates: '{{ ansible_env.HOME }}/.nvm/nvm.sh'
+  register: nvm_install
+  changed_when: false
+
 - name: Install Node package managers
   become: true
   ansible.builtin.command:
