@@ -4,12 +4,14 @@
     url: https://deb.nodesource.com/setup_18.x
     dest: /tmp/setup_18.x.sh
     mode: '0755'
+  when: should_be_root
 
 - name: Install Node repository
   become: true
   ansible.builtin.command: bash /tmp/setup_18.x.sh
   register: node_repository
   changed_when: false
+  when: should_be_root
 
 - name: Install node
   become: true
