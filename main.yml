@@ -9,6 +9,10 @@
     - default.config.yml
 
   pre_tasks:
+    - name: Display OS and if should be should be root
+      ansible.builtin.debug:
+        msg: 'OS is {{ ansible_os_family }} and should_be_root is {{ should_be_root }}'
+
     - name: Load configuration
       ansible.builtin.include_vars: '{{ item }}'
       with_fileglob:
