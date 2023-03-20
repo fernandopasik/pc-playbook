@@ -10,9 +10,9 @@
     state: present
 
 - name: Install GitHub CLI
-  ansible.builtin.apt:
+  become: '{{ should_be_root }}'
+  ansible.builtin.package:
     name: gh
-    state: present
 
 - name: Configure GitHub cli
   ansible.builtin.shell: |
