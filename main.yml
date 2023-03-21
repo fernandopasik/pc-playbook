@@ -4,6 +4,7 @@
 
   vars:
     should_be_root: "{{ false if ansible_os_family == 'Darwin' else true }}"
+    use_apt: "{{ false if ansible_os_family == 'Darwin' else true }}"
 
   vars_files:
     - default.config.yml

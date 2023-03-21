@@ -10,7 +10,7 @@
   ansible.builtin.package:
     name:
       - python3-pip
-  when: should_be_root
+  when: use_apt
 
 - name: Install ansible
   ansible.builtin.pip:
