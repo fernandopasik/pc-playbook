@@ -4,3 +4,8 @@
   ansible.builtin.apt:
     upgrade: full
   when: use_apt
+
+- name: Update brew packages
+  community.general.homebrew:
+    upgrade_all: true
+  when: not use_apt

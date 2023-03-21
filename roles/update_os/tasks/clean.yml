@@ -10,3 +10,9 @@
   ansible.builtin.apt:
     autoremove: true
   when: use_apt
+
+- name: Clean brew cache
+  ansible.builtin.command: brew cleanup
+  when: not use_apt
+  register: brew_clean
+  changed_when: false
