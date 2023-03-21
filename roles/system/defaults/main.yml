@@ -1,3 +1,11 @@
 ---
+recommended_packages:
+  - curl
+  - gnupg
+  - htop
+  - iperf3
+  - neofetch
+  - rsync
+  - wget
 sudo_group: sudo
 sudo_user: '{{ ansible_user }}'

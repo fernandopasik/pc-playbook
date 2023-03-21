@@ -7,3 +7,8 @@
     regexp: '^%{{ sudo_group }}'
     line: '%{{ sudo_group }} ALL=(ALL) NOPASSWD: ALL'
     validate: '/usr/sbin/visudo -cf %s'
+
+- name: Install recommended packages
+  become: true
+  ansible.builtin.apt:
+    pkg: '{{ recommended_packages }}'

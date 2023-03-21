@@ -2,9 +2,6 @@
 - name: Update cache
   ansible.builtin.include_tasks: update.yml
 
-- name: Install packages
-  ansible.builtin.include_tasks: install.yml
-
 - name: Upgrade packages
   ansible.builtin.include_tasks: upgrade.yml
 

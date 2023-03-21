@@ -1,11 +1,2 @@
 ---
 package_cache_expiry: 86400 # One day
-recommended_packages:
-  - curl
-  - gnupg
-  - htop
-  - iperf3
-  - neofetch
-  - rsync
-  - shellcheck
-  - wget
