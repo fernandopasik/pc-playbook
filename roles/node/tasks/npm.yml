@@ -1,0 +1,26 @@
+---
+- name: Update npm
+  become: '{{ should_be_root }}'
+  community.general.npm:
+    name: npm
+    global: true
+    state: latest
+
+- name: Install npm global packages
+  become: '{{ should_be_root }}'
+  community.general.npm:
+    name: '{{ item }}'
+    global: true
+    state: latest
+  loop:
+    - corepack
+    - npm-check-updates
+    - pure-prompt
+    - yo
+
+- name: Install Node package managers
+  become: true
+  ansible.builtin.command:
+    cmd: corepack enable
+  register: corepack
+  changed_when: false

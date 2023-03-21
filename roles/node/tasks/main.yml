@@ -1,60 +1,9 @@
 ---
-- name: Download Node repository
-  ansible.builtin.get_url:
-    url: https://deb.nodesource.com/setup_18.x
-    dest: /tmp/setup_18.x.sh
-    mode: '0755'
-  when: use_apt
-
-- name: Install Node repository
-  become: true
-  ansible.builtin.command: bash /tmp/setup_18.x.sh
-  register: node_repository
-  changed_when: false
-  when: use_apt
-
 - name: Install node
-  become: '{{ should_be_root }}'
-  ansible.builtin.package:
-    name: nodejs
+  ansible.builtin.include_tasks: node.yml
 
-- name: Download nvm install script
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh
-    dest: /tmp/nvm_install.sh
-    mode: '0755'
+- name: Install and configure nvm
+  ansible.builtin.include_tasks: nvm.yml
 
-- name: Run nvm install script
-  ansible.builtin.command: zsh /tmp/nvm_install.sh
-  args:
-    creates: '{{ ansible_env.HOME }}/.nvm/nvm.sh'
-  register: nvm_install
-  changed_when: false
-
-- name: Configure nvm
-  ansible.builtin.shell: |
-    . {{ ansible_env.HOME }}/.nvm/nvm.sh
-    nvm install --lts --no-progress
-    nvm alias default system
-  register: nvm_configure
-  changed_when: false
-
-- name: Install Node global packages
-  become: '{{ should_be_root }}'
-  community.general.npm:
-    name: '{{ item }}'
-    global: true
-    state: latest
-  loop:
-    - corepack
-    - npm
-    - npm-check-updates
-    - pure-prompt
-    - yo
-
-- name: Install Node package managers
-  become: true
-  ansible.builtin.command:
-    cmd: corepack enable
-  register: corepack
-  changed_when: false
+- name: Update and configure npm and install global packages
+  ansible.builtin.include_tasks: npm.yml
