@@ -15,4 +15,4 @@
   become: true
   ansible.builtin.reboot:
     reboot_timeout: 1000
-  when: reboot_required.stat.exists or reboot_required_pkgs.stat.exists
+  when: use_apt and reboot_required.stat.exists or reboot_required_pkgs.stat.exists
