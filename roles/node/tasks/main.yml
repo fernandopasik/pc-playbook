@@ -40,7 +40,7 @@
   changed_when: false
 
 - name: Install Node global packages
-  become: true
+  become: '{{ should_be_root }}'
   community.general.npm:
     name: '{{ item }}'
     global: true
