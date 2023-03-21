@@ -9,6 +9,6 @@
     validate: '/usr/sbin/visudo -cf %s'
 
 - name: Install recommended packages
-  become: true
-  ansible.builtin.apt:
-    pkg: '{{ recommended_packages }}'
+  become: '{{ should_be_root }}'
+  ansible.builtin.package:
+    name: '{{ recommended_packages }}'
