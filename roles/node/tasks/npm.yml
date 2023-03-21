@@ -24,3 +24,13 @@
     cmd: corepack enable
   register: corepack
   changed_when: false
+
+- name: Setup npm init project options
+  ansible.builtin.shell: |
+    npm config set init-author-email "{{ npm_author_email }}"
+    npm config set init-author-name "{{ npm_author_name }}"
+    npm config set init-author-url "{{ npm_author_url }}"
+    npm config set init-license UNLICENSED
+    npm config set init-version 0.0.0
+  register: npm_init
+  changed_when: false

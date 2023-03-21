@@ -1,2 +1,5 @@
 ---
 node_version: 19
+npm_author_email: '{{ git_user_email }}'
+npm_author_name: '{{ git_user_name }}'
+npm_author_url: ''
