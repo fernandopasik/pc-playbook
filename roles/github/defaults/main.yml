@@ -1,3 +1,2 @@
 ---
-github_username: fernandopasik
 github_email: '{{ git_user_email }}'
