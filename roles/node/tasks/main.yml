@@ -44,6 +44,7 @@
   community.general.npm:
     name: '{{ item }}'
     global: true
+    state: latest
   loop:
     - corepack
     - npm
