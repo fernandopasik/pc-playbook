@@ -12,7 +12,10 @@
   pre_tasks:
     - name: Display OS and if should be should be root
       ansible.builtin.debug:
-        msg: 'OS is {{ ansible_os_family }} and should_be_root is {{ should_be_root }}'
+        msg:
+          - 'OS is: {{ ansible_os_family }}'
+          - 'Should root be used? {{ should_be_root }}'
+          - 'Use apt? {{ use_apt }}'
 
     - name: Load configuration
       ansible.builtin.include_vars: '{{ item }}'
