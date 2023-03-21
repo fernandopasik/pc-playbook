@@ -3,11 +3,13 @@
   ansible.builtin.stat:
     path: /var/run/reboot-required
   register: reboot_required
+  when: use_apt
 
 - name: Determining if any packages require a reboot
   ansible.builtin.stat:
     path: /var/run/reboot-required.pkgs
   register: reboot_required_pkgs
+  when: use_apt
 
 - name: Perform reboot
   become: true

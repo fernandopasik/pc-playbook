@@ -1,5 +1,6 @@
 ---
-- name: Update OS packages
+- name: Update apt packages
   become: true
   ansible.builtin.apt:
     upgrade: full
+  when: use_apt

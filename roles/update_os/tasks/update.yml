@@ -1,6 +1,7 @@
 ---
-- name: Update repositories cache
+- name: Update apt repositories cache
   become: true
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: '{{ package_cache_expiry }}'
+  when: use_apt
