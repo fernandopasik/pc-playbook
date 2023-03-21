@@ -2,13 +2,13 @@
 - name: Download Node repository
   ansible.builtin.get_url:
     url: https://deb.nodesource.com/setup_18.x
-    dest: /tmp/setup_18.x.sh
+    dest: /tmp/node_setup.sh
     mode: '0755'
   when: use_apt
 
 - name: Install Node repository
   become: true
-  ansible.builtin.command: bash /tmp/setup_18.x.sh
+  ansible.builtin.command: bash /tmp/node_setup.sh
   register: node_repository
   changed_when: false
   when: use_apt
