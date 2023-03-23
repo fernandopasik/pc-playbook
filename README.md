@@ -1,5 +1,7 @@
 # PC Playbook
 
+Ansible playbook to setup your Mac or Linux computer for everyday tasks and software development workflow.
+
 <!-- BADGES - START -->
 
 [![Build Status](https://github.com/fernandopasik/pc-playbook/actions/workflows/main.yml/badge.svg)](https://github.com/fernandopasik/pc-playbook/actions/workflows/main.yml 'Build Status')
