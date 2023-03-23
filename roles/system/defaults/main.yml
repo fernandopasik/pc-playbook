@@ -7,5 +7,4 @@ recommended_packages:
   - neofetch
   - rsync
   - wget
-sudo_group: sudo
 sudo_user: '{{ ansible_user }}'

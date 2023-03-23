@@ -1,4 +1,12 @@
 ---
+- name: Detect sudo group
+  ansible.builtin.set_fact:
+    sudo_group: '{{ "admin" if ansible_distribution == "MacOSX" else "sudo" }}'
+
+- name: Display sudo group
+  ansible.builtin.debug:
+    var: sudo_group
+
 - name: Allow passwordless sudo
   become: true
   ansible.builtin.lineinfile:
