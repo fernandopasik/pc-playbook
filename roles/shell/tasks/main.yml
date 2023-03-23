@@ -4,3 +4,7 @@
 
 - name: Install and Configure Oh my zsh
   ansible.builtin.include_tasks: oh-my-zsh.yml
+
+- name: Install and Configure Hyper app
+  ansible.builtin.include_tasks: hyper.yml
+  when: ansible_distribution == 'MacOSX'

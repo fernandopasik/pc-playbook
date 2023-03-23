@@ -1,0 +1,12 @@
+---
+- name: Install Hyper app
+  community.general.homebrew_cask:
+    name: hyper
+
+- name: Link my Hyper config file
+  ansible.builtin.file:
+    src: '{{ dotfiles_dir }}/.hyper.js'
+    dest: ~/.hyper.js
+    force: true
+    mode: '0644'
+    state: link
