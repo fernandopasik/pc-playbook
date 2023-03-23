@@ -1,46 +1,6 @@
 ---
-- name: Install zsh and plugins
-  become: '{{ should_be_root }}'
-  ansible.builtin.package:
-    name:
-      - zsh
-      - zsh-syntax-highlighting
+- name: Install and Configure zsh
+  ansible.builtin.include_tasks: zsh.yml
 
-- name: Set as default shell
-  become: true
-  ansible.builtin.user:
-    name: '{{ ansible_user }}'
-    shell: /usr/bin/zsh
-
-- name: Link my zsh config file
-  ansible.builtin.file:
-    src: '{{ dotfiles_dir }}/.zshrc'
-    dest: ~/.zshrc
-    force: true
-    mode: '0644'
-    state: link
-
-- name: Check if Oh My Zsh exists
-  ansible.builtin.stat:
-    path: ~/.oh-my-zsh/
-  register: oh_my_zsh
-
-- name: Install Oh My Zsh
-  ansible.builtin.shell:
-    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  args:
-    creates: ~/.oh-my-zsh
-  when: not oh_my_zsh.stat.exists
-
-- name: Update Oh My Zsh
-  ansible.builtin.git:
-    repo: ~/.oh-my-zsh/.git
-    dest: ~/.oh-my-zsh/
-    update: true
-
-- name: Create empty profile file
-  ansible.builtin.copy:
-    dest: ~/.profile
-    content: ''
-    mode: '0644'
-    force: false
+- name: Install and Configure Oh my zsh
+  ansible.builtin.include_tasks: oh-my-zsh.yml
