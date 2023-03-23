@@ -1,0 +1,14 @@
+---
+- name: Set the hostname
+  become: true
+  ansible.builtin.hostname:
+    name: '{{ hostname }}'
+
+- name: Replace the hostname entry with our own
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    insertafter: ^127\.0\.0\.1 *localhost
+    line: '127.0.0.1 {{ hostname }}'
+    owner: root
+    mode: '0644'

@@ -1,2 +1,2 @@
 ---
-shell_user: '{{ ansible_user }}'
+hostname: PC
