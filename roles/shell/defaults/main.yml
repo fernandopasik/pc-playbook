@@ -1,2 +1,3 @@
 ---
 dotfiles_dir: '{{ repos_dir }}/dotfiles'
+zsh_path: "{{ '/usr/local/bin/zsh' if ansible_os_family == 'Darwin' else '/usr/bin/zsh' }}"
