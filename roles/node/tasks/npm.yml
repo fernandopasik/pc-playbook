@@ -19,7 +19,7 @@
     - yo
 
 - name: Install Node package managers
-  become: true
+  become: '{{ should_be_root }}'
   ansible.builtin.command:
     cmd: corepack enable
   register: corepack
