@@ -15,10 +15,7 @@
 - name: Install ansible
   ansible.builtin.pip:
     name: '{{ item }}'
-  loop:
-    - ansible
-    - ansible-lint
-    - jmespath
+  loop: '{{ pip_recommended_packages }}'
 
 - name: Get outdated pip packages information
   ansible.builtin.command:
