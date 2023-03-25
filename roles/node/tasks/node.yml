@@ -4,14 +4,14 @@
     url: 'https://deb.nodesource.com/setup_{{ node_version }}.x'
     dest: '/tmp/node_setup_{{ node_version }}.sh'
     mode: '0755'
-  when: use_apt
+  when: ansible_os_family == 'Linux'
 
 - name: Install Node repository
   become: true
   ansible.builtin.command: 'bash /tmp/node_setup_{{ node_version }}.sh'
   register: node_repository
   changed_when: false
-  when: use_apt
+  when: ansible_os_family == 'Linux'
 
 - name: Install node
   become: '{{ should_be_root }}'
