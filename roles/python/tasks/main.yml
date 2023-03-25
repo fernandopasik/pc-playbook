@@ -25,7 +25,7 @@
 
 - name: List outdated pip packages
   ansible.builtin.set_fact:
-    pip_outdated_packages: '{{ pip_outdated_info.stdout | from_json | community.general.json_query("[*].name") }}'
+    pip_outdated_packages: '{{ pip_outdated_info.stdout | from_json | community.general.json_query("[*].name") | reject("search", "resolvelib") | list }}'
 
 - name: Update all pip packages to latest
   ansible.builtin.pip:
