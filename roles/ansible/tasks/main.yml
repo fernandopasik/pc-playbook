@@ -18,6 +18,7 @@
   loop:
     - ansible
     - ansible-lint
+    - jmespath
 
 - name: Get outdated pip packages information
   ansible.builtin.command:
