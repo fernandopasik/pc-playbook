@@ -10,7 +10,7 @@
   ansible.builtin.package:
     name:
       - python3-pip
-  when: ansible_os_family == 'Linux'
+  when: ansible_system == 'Linux'
 
 - name: Install ansible
   ansible.builtin.pip:
