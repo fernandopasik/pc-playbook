@@ -1,4 +1,8 @@
 ---
+- name: Install homebrew
+  ansible.builtin.include_tasks: install.yml
+  when: is_macos
+
 - name: Update cache
   ansible.builtin.include_tasks: update.yml
 

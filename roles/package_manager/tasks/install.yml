@@ -1,0 +1,16 @@
+---
+- name: Check if homebrew is available
+  ansible.builtin.command: command -v brew
+  changed_when: false
+  ignore_errors: true
+  register: check_homebrew
+
+- name: Decide if installing homebrew
+  ansible.builtin.set_fact:
+    should_install_homebrew: '{{ check_homebrew is failed }}'
+
+- name: Install homebrew
+  ansible.builtin.shell: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+  environment:
+    NONINTERACTIVE: '1'
+  when: should_install_homebrew
