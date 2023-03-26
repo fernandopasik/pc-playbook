@@ -1,3 +1,3 @@
 ---
 roles:
-  - elliotweiser.osx-command-line-tools
+  - name: elliotweiser.osx-command-line-tools
