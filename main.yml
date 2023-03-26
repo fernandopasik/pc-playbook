@@ -21,6 +21,7 @@
         - '{{ playbook_dir }}/config.yml'
 
   roles:
+    - elliotweiser.osx-command-line-tools
     - package_manager
     - system
     - git
