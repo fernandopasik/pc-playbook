@@ -4,7 +4,6 @@
 
   vars:
     should_be_root: "{{ false if ansible_os_family == 'Darwin' else true }}"
-    use_apt: "{{ false if ansible_os_family == 'Darwin' else true }}"
 
   vars_files:
     - default.config.yml
@@ -15,7 +14,6 @@
         msg:
           - 'OS is: {{ ansible_os_family }}'
           - 'Should root be used? {{ should_be_root }}'
-          - 'Use apt? {{ use_apt }}'
 
     - name: Load configuration
       ansible.builtin.include_vars: '{{ item }}'
