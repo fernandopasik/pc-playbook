@@ -3,16 +3,16 @@
   become: true
   ansible.builtin.apt:
     autoclean: true
-  when: use_apt
+  when: is_linux
 
 - name: Remove apt dependencies that are no longer required
   become: true
   ansible.builtin.apt:
     autoremove: true
-  when: use_apt
+  when: is_linux
 
 - name: Clean brew cache
   ansible.builtin.command: brew cleanup
-  when: not use_apt
+  when: is_macos
   register: brew_clean
   changed_when: false

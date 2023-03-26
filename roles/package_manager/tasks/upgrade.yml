@@ -3,9 +3,9 @@
   become: true
   ansible.builtin.apt:
     upgrade: full
-  when: use_apt
+  when: is_linux
 
 - name: Update brew packages
   community.general.homebrew:
     upgrade_all: true
-  when: not use_apt
+  when: is_macos

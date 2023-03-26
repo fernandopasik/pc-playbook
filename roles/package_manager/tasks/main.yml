@@ -10,4 +10,4 @@
 
 - name: Check if reboot is needed
   ansible.builtin.include_tasks: reboot.yml
-  when: use_apt
+  when: is_linux

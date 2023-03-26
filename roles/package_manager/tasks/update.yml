@@ -4,9 +4,9 @@
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: '{{ package_cache_expiry }}'
-  when: use_apt
+  when: is_linux
 
 - name: Update brew repositories cache
   community.general.homebrew:
     update_homebrew: true
-  when: not use_apt
+  when: is_macos
