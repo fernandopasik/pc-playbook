@@ -21,7 +21,8 @@
         - '{{ playbook_dir }}/config.yml'
 
   roles:
-    - elliotweiser.osx-command-line-tools
+    - role: elliotweiser.osx-command-line-tools
+      when: ansible_distribution == 'MacOSX'
     - package_manager
     - system
     - git
