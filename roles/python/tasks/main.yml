@@ -17,19 +17,3 @@
     name: '{{ item }}'
     extra_args: --upgrade
   loop: '{{ pip_recommended_packages }}'
-
-- name: Get outdated pip packages information
-  ansible.builtin.command:
-    cmd: pip3 --disable-pip-version-check list --outdated --format=json
-  register: pip_outdated_info
-  changed_when: false
-
-- name: List outdated pip packages
-  ansible.builtin.set_fact:
-    pip_outdated_packages: '{{ pip_outdated_info.stdout | from_json | community.general.json_query("[*].name") | reject("search", "resolvelib") | list }}'
-
-- name: Update all pip packages to latest
-  ansible.builtin.pip:
-    name: '{{ item }}'
-    extra_args: --upgrade
-  loop: '{{ pip_outdated_packages }}'
