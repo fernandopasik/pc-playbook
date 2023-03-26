@@ -23,7 +23,7 @@
         - '{{ playbook_dir }}/config.yml'
 
   roles:
-    - update_os
+    - package_manager
     - system
     - git
     - github
