@@ -15,6 +15,7 @@
 - name: Install ansible
   ansible.builtin.pip:
     name: '{{ item }}'
+    extra_args: --upgrade
   loop: '{{ pip_recommended_packages }}'
 
 - name: Get outdated pip packages information
