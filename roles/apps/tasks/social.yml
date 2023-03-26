@@ -1,0 +1,10 @@
+---
+- name: Install social apps
+  ansible.builtin.package:
+    name:
+      - discord
+      - messenger
+      - signal
+      - skype
+      - telegram-desktop
+      - whatsapp

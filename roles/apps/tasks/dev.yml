@@ -1,0 +1,57 @@
+---
+- name: Install dev languages
+  become: '{{ should_be_root }}'
+  ansible.builtin.package:
+    name:
+      - golang-go
+      - default-jdk
+      - ruby-full
+      - rustc
+  when: is_linux
+
+- name: Install dev languages
+  ansible.builtin.package:
+    name:
+      - go
+      - openjdk
+      - ruby
+      - rust
+  when: is_macos
+
+- name: Install dev utils
+  become: '{{ should_be_root }}'
+  ansible.builtin.package:
+    name:
+      - httpie
+      - fonts-jetbrains-mono
+      - qemu
+
+- name: Install Visual Studio Code
+  ansible.builtin.package:
+    name:
+      - visual-studio-code
+  when: is_macos
+
+- name: Install infra apps
+  ansible.builtin.package:
+    name:
+      - dive
+      - docker
+      - hadolint
+      - helm
+      - kubernetes-cli
+      - minikube
+  when: is_macos
+
+- name: Install browsers
+  ansible.builtin.package:
+    name:
+      - firefox
+      - microsoft-edge
+  when: is_macos
+
+- name: Chat apps
+  ansible.builtin.package:
+    name:
+      - slack
+  when: is_macos
