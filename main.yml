@@ -31,3 +31,5 @@
     - python
     - node
     - apps
+    - role: macos
+      when: ansible_distribution == 'MacOSX'
