@@ -13,6 +13,14 @@
     value: '{{ macos_dock_item_configs }}'
   changed_when: false
 
+- name: Setup Dock options
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: '{{ item.key }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop: '{{ macos_dock_options }}'
+
 - name: Restart Dock
   ansible.builtin.command: killall Dock
   register: macos_dock_kill

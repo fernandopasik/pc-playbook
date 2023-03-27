@@ -10,3 +10,41 @@ macos_dock_items:
   - System/Applications/Notes
   - Applications/Hyper
   - Applications/Visual Studio Code
+
+macos_dock_options:
+  # Automatically hide and show the Dock
+  - key: autohide
+    type: bool
+    value: true
+  # Double-click a window's title bar to
+  - key: dblclickbehavior
+    type: string
+    value: maximize
+  # Animate opening applications
+  - key: launchanim
+    type: bool
+    value: false
+  # Magnification
+  - key: magnification
+    type: bool
+    value: false
+  # Minimize windows using effect
+  - key: mineffect
+    type: string
+    value: scale
+  # Minimize windows into application icon
+  - key: minimize-to-application
+    type: bool
+    value: true
+  # Show indicators for open applications
+  - key: show-process-indicators
+    type: bool
+    value: true
+  # Show recent applications in Dock
+  - key: show-recents
+    type: bool
+    value: false
+  # Dock item size
+  - key: tilesize
+    type: float
+    value: 60
