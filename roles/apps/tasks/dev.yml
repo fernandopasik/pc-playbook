@@ -23,20 +23,27 @@
   ansible.builtin.package:
     name:
       - httpie
-      - fonts-jetbrains-mono
       - qemu
 
+- name: Install dev utils
+  community.general.homebrew_cask:
+    name: font-jetbrains-mono
+  when: is_macos
+
 - name: Install Visual Studio Code
-  ansible.builtin.package:
-    name:
-      - visual-studio-code
+  community.general.homebrew_cask:
+    name: visual-studio-code
+  when: is_macos
+
+- name: Install Docker
+  community.general.homebrew_cask:
+    name: docker
   when: is_macos
 
 - name: Install infra apps
   ansible.builtin.package:
     name:
       - dive
-      - docker
       - hadolint
       - helm
       - kubernetes-cli
