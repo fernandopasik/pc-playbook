@@ -14,3 +14,5 @@
 
 - name: Restart Dock
   ansible.builtin.command: killall Dock
+  register: macos_dock_kill
+  changed_when: false
