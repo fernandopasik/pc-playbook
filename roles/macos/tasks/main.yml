@@ -1,3 +1,8 @@
 ---
+- name: Close Preferences before changes
+  ansible.builtin.command: osascript -e 'tell application "System Preferences" to quit'
+  register: macos_close_preferences
+  changed_when: false
+
 - name: Setup dock
   ansible.builtin.include_tasks: dock.yml
