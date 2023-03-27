@@ -44,14 +44,14 @@
   when: is_macos
 
 - name: Install browsers
-  ansible.builtin.package:
-    name:
-      - firefox
-      - microsoft-edge
+  community.general.homebrew_cask:
+    name: '{{ item }}'
+  loop:
+    - firefox
+    - microsoft-edge
   when: is_macos
 
 - name: Chat apps
-  ansible.builtin.package:
-    name:
-      - slack
+  community.general.homebrew_cask:
+    name: slack
   when: is_macos

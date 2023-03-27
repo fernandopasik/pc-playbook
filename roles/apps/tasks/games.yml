@@ -1,9 +1,10 @@
 ---
 - name: Install games apps
-  ansible.builtin.package:
-    name:
-      - battle-net
-      - epic-games
-      - gog-galaxy
-      - openemu-experimental
-      - steam
+  community.general.homebrew_cask:
+    name: '{{ item }}'
+  loop:
+    - battle-net
+    - epic-games
+    - gog-galaxy
+    - openemu-experimental
+    - steam

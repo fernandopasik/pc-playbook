@@ -1,10 +1,11 @@
 ---
 - name: Install social apps
-  ansible.builtin.package:
-    name:
-      - discord
-      - messenger
-      - signal
-      - skype
-      - telegram-desktop
-      - whatsapp
+  community.general.homebrew_cask:
+    name: '{{ item }}'
+  loop:
+    - discord
+    - messenger
+    - signal
+    - skype
+    - telegram-desktop
+    - whatsapp

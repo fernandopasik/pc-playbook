@@ -1,28 +1,31 @@
 ---
 - name: Install browsers
-  ansible.builtin.package:
-    name:
-      - google-chrome
+  community.general.homebrew_cask:
+    name: '{{ item }}'
+  loop:
+    - google-chrome
 
 - name: Install QuickLook plugins
-  ansible.builtin.package:
-    name:
-      - qlcolorcode
-      - qlimagesize
-      - qlmarkdown
-      - quicklook-csv
-      - quicklook-json
-      - webpquicklook
+  community.general.homebrew_cask:
+    name: '{{ item }}'
+  loop:
+    - qlcolorcode
+    - qlimagesize
+    - qlmarkdown
+    - quicklook-csv
+    - quicklook-json
+    - webpquicklook
 
 - name: Install apps
-  ansible.builtin.package:
-    name:
-      - coconutbattery
-      - google-drive
-      - logi-options-plus
-      - smcfancontrol
-      - spectacle
-      - spotify
-      - stats
-      - the-unarchiver
-      - vlc
+  community.general.homebrew_cask:
+    name: '{{ item }}'
+  loop:
+    - coconutbattery
+    - google-drive
+    - logi-options-plus
+    - smcfancontrol
+    - spectacle
+    - spotify
+    - stats
+    - the-unarchiver
+    - vlc
