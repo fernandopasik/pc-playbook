@@ -11,4 +11,4 @@
   ansible.builtin.include_tasks: finder.yml
 
 - name: Setup software updates
-  ansible.builtin.include_tasks: updates.yml
+  ansible.builtin.include_tasks: update.yml
