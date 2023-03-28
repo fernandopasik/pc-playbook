@@ -56,3 +56,15 @@ macos_dock_options:
   - key: tilesize
     type: float
     value: 60
+  # LaunchPad columns
+  - key: springboard-columns
+    type: int
+    value: 9
+  # LaunchPad rows
+  - key: springboard-rows
+    type: int
+    value: 5
+  # LaunchPad reset
+  - key: ResetLaunchPad
+    type: bool
+    value: true
