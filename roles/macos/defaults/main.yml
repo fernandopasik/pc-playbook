@@ -16,6 +16,10 @@ macos_dock_options:
   - key: autohide
     type: bool
     value: true
+  # Automatically hide and show the Dock delay time
+  - key: autohide-delay
+    type: float
+    value: 0
   # Double-click a window's title bar to
   - key: dblclickbehavior
     type: string
@@ -44,6 +48,10 @@ macos_dock_options:
   - key: show-recents
     type: bool
     value: false
+  # Make Dock icons of hidden applications translucent
+  - key: showhidden
+    type: bool
+    value: true
   # Dock item size
   - key: tilesize
     type: float
