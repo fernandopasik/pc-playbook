@@ -6,3 +6,6 @@
 
 - name: Setup dock
   ansible.builtin.include_tasks: dock.yml
+
+- name: Setup finder
+  ansible.builtin.include_tasks: finder.yml
