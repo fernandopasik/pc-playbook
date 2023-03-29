@@ -5,6 +5,12 @@
   loop:
     - google-chrome
 
+- name: Set Chrome as default browser
+  ansible.builtin.command:
+    cmd: open -a "Google Chrome" --args --make-default-browser
+  register: chrome_default
+  changed_when: false
+
 - name: Install QuickLook plugins
   community.general.homebrew_cask:
     name: '{{ item }}'
