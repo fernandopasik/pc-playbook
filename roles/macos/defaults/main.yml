@@ -64,10 +64,6 @@ macos_dock_options:
   - key: springboard-rows
     type: int
     value: 5
-  # LaunchPad reset
-  - key: ResetLaunchPad
-    type: bool
-    value: true
 
 macos_finder_options:
   # Disable show all file extensions
