@@ -22,6 +22,11 @@
     - quicklook-json
     - webpquicklook
 
+- name: Add support for quicklook plugins in macOS >= 10.15
+  ansible.builtin.command: xattr -d -r com.apple.quarantine ~/Library/QuickLook
+  register: quicklook_plugins_support
+  changed_when: false
+
 - name: Install apps
   community.general.homebrew_cask:
     name: '{{ item }}'
