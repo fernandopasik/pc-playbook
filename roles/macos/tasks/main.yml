@@ -12,3 +12,6 @@
 
 - name: Setup software updates
   ansible.builtin.include_tasks: update.yml
+
+- name: Setup options
+  ansible.builtin.include_tasks: options.yml
