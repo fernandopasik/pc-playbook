@@ -40,3 +40,15 @@
     - stats
     - the-unarchiver
     - vlc
+
+- name: Spectacle status
+  community.general.osx_defaults:
+    domain: com.divisiblebyzero.Spectacle
+    key: StatusItemEnabled
+    type: bool
+    value: false
+
+- name: Add Spectacle to login items
+  ansible.builtin.command: osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Spectacle.app", hidden:true, name:"Spectacle"}'
+  register: spectacle_login
+  changed_when: false
