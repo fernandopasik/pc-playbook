@@ -31,19 +31,19 @@ macos_finder_options:
   # Hide icons for external hard drives on the desktop
   - key: ShowExternalHardDrivesOnDesktop
     type: bool
-    value: true
+    value: false
   # Hide icons for hard drives on the desktop
   - key: ShowHardDrivesOnDesktop
     type: bool
-    value: true
+    value: false
   # Hide icons for mounted servers on the desktop
   - key: ShowMountedServersOnDesktop
     type: bool
-    value: true
+    value: false
   # Hide icons for removable media on the desktop
   - key: ShowRemovableMediaOnDesktop
     type: bool
-    value: true
+    value: false
   # Enable emptying Trash securely
   - key: EmptyTrashSecurely
     type: bool
