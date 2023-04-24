@@ -1,17 +1,17 @@
 ---
 - name: Detect sudo group
   ansible.builtin.set_fact:
-    sudo_group: '{{ "admin" if ansible_distribution == "MacOSX" else "sudo" }}'
+    system_sudo_group: '{{ "admin" if ansible_distribution == "MacOSX" else "sudo" }}'
 
 - name: Display sudo group
   ansible.builtin.debug:
-    var: sudo_group
+    var: system_sudo_group
 
 - name: Allow passwordless sudo
   become: true
   ansible.builtin.lineinfile:
     path: /etc/sudoers
     state: present
-    regexp: '^%{{ sudo_group }}'
-    line: '%{{ sudo_group }} ALL=(ALL) NOPASSWD: ALL'
+    regexp: '^%{{ system_sudo_group }}'
+    line: '%{{ system_sudo_group }} ALL=(ALL) NOPASSWD: ALL'
     validate: '/usr/sbin/visudo -cf %s'
