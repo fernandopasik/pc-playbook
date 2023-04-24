@@ -12,7 +12,7 @@
       - python3-pip
   when: ansible_system == 'Linux'
 
-- name: Install ansible
+- name: Install pip recommended packages
   ansible.builtin.pip:
     name: '{{ item }}'
     extra_args: --upgrade
