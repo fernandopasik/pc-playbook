@@ -14,5 +14,5 @@
 - name: Clean brew cache
   ansible.builtin.command: brew cleanup
   when: is_macos
-  register: brew_clean
+  register: package_manager_brew_clean
   changed_when: false
