@@ -8,7 +8,7 @@
 - name: Set Chrome as default browser
   ansible.builtin.command:
     cmd: open -a "Google Chrome" --args --make-default-browser
-  register: chrome_default
+  register: apps_chrome_default
   changed_when: false
 
 - name: Install QuickLook plugins
@@ -24,7 +24,7 @@
 
 - name: Add support for quicklook plugins in macOS >= 10.15
   ansible.builtin.command: xattr -d -r com.apple.quarantine ~/Library/QuickLook
-  register: quicklook_plugins_support
+  register: apps_quicklook_plugins_support
   changed_when: false
 
 - name: Install apps
@@ -52,5 +52,5 @@
   # yamllint disable rule:line-length
   ansible.builtin.command: osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Spectacle.app", hidden:true, name:"Spectacle"}'
   # yamllint enable rule:line-length
-  register: spectacle_login
+  register: apps_spectacle_login
   changed_when: false
