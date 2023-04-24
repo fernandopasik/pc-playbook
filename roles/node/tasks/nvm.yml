@@ -9,7 +9,7 @@
   ansible.builtin.command: zsh /tmp/nvm_install.sh
   args:
     creates: '{{ ansible_env.HOME }}/.nvm/nvm.sh'
-  register: nvm_install
+  register: node_nvm_install
   changed_when: false
 
 - name: Configure nvm
@@ -17,5 +17,5 @@
     . {{ ansible_env.HOME }}/.nvm/nvm.sh
     nvm install --lts --no-progress
     nvm alias default system
-  register: nvm_configure
+  register: node_nvm_configure
   changed_when: false

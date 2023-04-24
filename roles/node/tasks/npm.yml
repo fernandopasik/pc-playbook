@@ -22,7 +22,7 @@
   become: '{{ should_be_root }}'
   ansible.builtin.command:
     cmd: corepack enable
-  register: corepack
+  register: node_corepack
   changed_when: false
 
 - name: Setup npm init project options
@@ -32,5 +32,5 @@
     npm config set init-author-url "{{ npm_author_url }}"
     npm config set init-license UNLICENSED
     npm config set init-version 0.0.0
-  register: npm_init
+  register: node_npm_init
   changed_when: false
