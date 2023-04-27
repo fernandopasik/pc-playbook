@@ -35,7 +35,7 @@
     - google-drive
     - logi-options-plus
     - smcfancontrol
-    - spectacle
+    - rectangle
     - spotify
     - stats
     - the-unarchiver
@@ -50,7 +50,7 @@
 
 - name: Add Spectacle to login items
   # yamllint disable rule:line-length
-  ansible.builtin.command: osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Spectacle.app", hidden:true, name:"Spectacle"}'
+  ansible.builtin.command: osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Rectangle.app", hidden:true, name:"Rectangle"}'
   # yamllint enable rule:line-length
   register: apps_spectacle_login
   changed_when: false
