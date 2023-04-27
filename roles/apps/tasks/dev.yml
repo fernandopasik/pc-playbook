@@ -50,6 +50,11 @@
       - minikube
   when: is_macos
 
+- name: Install infra apps
+  ansible.builtin.package:
+    name:
+      - terraform
+
 - name: Install browsers
   community.general.homebrew_cask:
     name: '{{ item }}'
