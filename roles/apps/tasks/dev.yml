@@ -50,7 +50,22 @@
       - minikube
   when: is_macos
 
-- name: Install infra apps
+- name: Add Hashicorp apt key
+  become: '{{ should_be_root }}'
+  ansible.builtin.apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Add HashiCorp Repository
+  become: '{{ should_be_root }}'
+  ansible.builtin.apt_repository:
+    repo: 'deb https://apt.releases.hashicorp.com {{ ansible_lsb.codename }} main'
+    filename: hashicorp
+    state: present
+  when: is_linux
+
+- name: Install Terraform
+  become: '{{ should_be_root }}'
   ansible.builtin.package:
     name:
       - terraform
