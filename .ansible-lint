@@ -8,3 +8,4 @@ exclude_paths:
   - venv
 skip_list:
   - latest[git]
+  - var-naming[no-role-prefix]
