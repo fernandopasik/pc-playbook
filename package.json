@@ -18,8 +18,8 @@
     "verify": "npm run format:check && npm run lint && npm run ansible:lint && npm run ansible:check"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.2.0",
-    "@commitlint/config-conventional": "^18.1.0",
+    "@commitlint/cli": "^18.4.0",
+    "@commitlint/config-conventional": "^18.4.0",
     "del-cli": "^5.1.0",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
