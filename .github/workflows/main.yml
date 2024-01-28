@@ -36,12 +36,13 @@ jobs:
         uses: fernandopasik/actions/setup-node@main
       - name: Lint
         run: npm run lint -- --format junit -o reports/lint-results.xml
-      - name: Upload Report
-        uses: actions/upload-artifact@v4
+      - name: Publish Report
+        uses: dorny/test-reporter@v1
         if: always()
         with:
-          name: lint-results
+          name: Lint Report
           path: reports/lint-results.xml
+          reporter: java-junit
   ansible:
     name: Check Ansible Syntax and Lint
     runs-on: ubuntu-latest
