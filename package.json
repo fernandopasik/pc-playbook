@@ -13,7 +13,7 @@
     "format:check": "prettier --check .",
     "galaxy": "ansible-galaxy install -r requirements.yml",
     "lint": "eslint . --ext yml,yaml",
-    "prepare": "husky install",
+    "prepare": "husky",
     "setup": "ansible-playbook main.yml",
     "verify": "npm run format:check && npm run lint && npm run ansible:lint && npm run ansible:check"
   },
