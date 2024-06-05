@@ -1,5 +1,4 @@
 {
-  "*": ["prettier --check"],
-  "*.{yml,yaml}": ["eslint"],
+  "*": ["prettier --check", "eslint"],
   "{/,roles,tasks}/*.{yml,yaml}": ["ansible-lint"]
 }
