@@ -37,14 +37,7 @@ jobs:
       - name: Setup Node
         uses: fernandopasik/actions/setup-node@main
       - name: Lint
-        run: npm run lint -- --format junit -o reports/lint-results.xml
-      - name: Publish Report
-        uses: dorny/test-reporter@v1
-        if: always()
-        with:
-          name: Lint Report
-          path: reports/lint-results.xml
-          reporter: java-junit
+        run: npm run lint
   ansible:
     name: Check Ansible Syntax and Lint
     runs-on: ubuntu-latest
