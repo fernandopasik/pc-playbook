@@ -1,5 +1,6 @@
 {
   "name": "pc-playbook",
+  "type": "module",
   "description": "Ansible playbook to setup your Mac or Linux computer for everyday tasks and software development workflow",
   "repository": "fernandopasik/pc-playbook",
   "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
@@ -12,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "galaxy": "ansible-galaxy install -r requirements.yml",
-    "lint": "eslint . --ext yml,yaml",
+    "lint": "eslint",
     "prepare": "husky",
     "setup": "ansible-playbook main.yml",
     "verify": "npm run format:check && npm run lint && npm run ansible:lint && npm run ansible:check"
@@ -21,7 +22,7 @@
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "del-cli": "^5.1.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.4.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-yml": "^1.14.0",
