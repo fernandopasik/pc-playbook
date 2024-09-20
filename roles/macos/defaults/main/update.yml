@@ -1,3 +1,4 @@
+---
 macos_software_update_options:
   # Automatic check for updates
   - key: AutomaticCheckEnabled
