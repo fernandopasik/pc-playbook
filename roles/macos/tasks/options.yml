@@ -45,9 +45,11 @@
   loop: '{{ macos_apps_options }}'
 
 - name: Disable automatic emoji substitution, spell checking and smart quotes in Messages
+  # yamllint disable rule:line-length
   ansible.builtin.shell: |
     defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
     defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
     defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+  # yamllint enable rule:line-length
   register: macos_messages_options
   changed_when: false
