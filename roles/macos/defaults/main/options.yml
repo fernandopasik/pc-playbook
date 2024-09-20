@@ -95,7 +95,7 @@ macos_peripherals_options:
     key: ShowTime
     type: string
     value: YES
-  # yamllint enable rule:truthy
+    # yamllint enable rule:truthy
 
 macos_apps_options:
   # Prevent Time Machine from prompting to use new hard drives as backup volume
