@@ -5,7 +5,7 @@ exclude_paths:
   - .github
   - node_modules
   - galaxy
-  - venv
+  - .venv
 skip_list:
   - latest[git]
   - var-naming[no-role-prefix]
