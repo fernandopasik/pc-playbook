@@ -27,4 +27,4 @@ yarn.lock
 /config.yml
 /inventory.ini
 /galaxy
-/venv
+/.venv
