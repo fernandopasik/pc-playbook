@@ -3,7 +3,7 @@
   hosts: all
 
   vars:
-    should_be_root: "{{ false if ansible_os_family == 'Darwin' else true }}"
+    should_be_root: '{{ false if ansible_os_family == "Darwin" else true }}'
 
   vars_files:
     - default.config.yml
