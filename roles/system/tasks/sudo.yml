@@ -12,6 +12,6 @@
   ansible.builtin.lineinfile:
     path: /etc/sudoers
     state: present
-    regexp: '^%{{ system_sudo_group }}'
+    regexp: ^%{{ system_sudo_group }}
     line: '%{{ system_sudo_group }} ALL=(ALL) NOPASSWD: ALL'
-    validate: '/usr/sbin/visudo -cf %s'
+    validate: /usr/sbin/visudo -cf %s

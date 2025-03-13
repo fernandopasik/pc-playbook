@@ -13,7 +13,7 @@
       ansible.builtin.debug:
         msg:
           - 'OS is: {{ ansible_os_family }}'
-          - 'Should root be used? {{ should_be_root }}'
+          - Should root be used? {{ should_be_root }}
 
     - name: Load configuration
       ansible.builtin.include_vars: '{{ item }}'

@@ -1,14 +1,14 @@
 ---
 - name: Download Node repository
   ansible.builtin.get_url:
-    url: 'https://deb.nodesource.com/setup_{{ node_version }}.x'
-    dest: '/tmp/node_setup_{{ node_version }}.sh'
+    url: https://deb.nodesource.com/setup_{{ node_version }}.x
+    dest: /tmp/node_setup_{{ node_version }}.sh
     mode: '0755'
   when: ansible_system == 'Linux'
 
 - name: Install Node repository
   become: true
-  ansible.builtin.command: 'bash /tmp/node_setup_{{ node_version }}.sh'
+  ansible.builtin.command: bash /tmp/node_setup_{{ node_version }}.sh
   register: node_repository
   changed_when: false
   when: ansible_system == 'Linux'

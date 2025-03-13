@@ -9,7 +9,7 @@
   ansible.builtin.lineinfile:
     path: /etc/hosts
     insertafter: ^127\.0\.0\.1 *localhost
-    line: '127.0.0.1 {{ hostname }}'
+    line: 127.0.0.1 {{ hostname }}
     owner: root
     mode: '0644'
 

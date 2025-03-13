@@ -7,7 +7,7 @@
 
 - name: Add GitHub repository into sources list
   ansible.builtin.apt_repository:
-    repo: 'deb [arch=amd64] https://cli.github.com/packages stable main'
+    repo: deb [arch=amd64] https://cli.github.com/packages stable main
     state: present
   when: ansible_system == 'Linux'
 

@@ -11,7 +11,7 @@
 
 - name: Install homebrew
   # yamllint disable-line rule:line-length
-  ansible.builtin.shell: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+  ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   environment:
     NONINTERACTIVE: '1'
   changed_when: not package_manager_should_install_homebrew

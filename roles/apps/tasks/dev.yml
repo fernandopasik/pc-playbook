@@ -59,7 +59,7 @@
 - name: Add HashiCorp Repository
   become: '{{ should_be_root }}'
   ansible.builtin.apt_repository:
-    repo: 'deb https://apt.releases.hashicorp.com {{ ansible_lsb.codename }} main'
+    repo: deb https://apt.releases.hashicorp.com {{ ansible_lsb.codename }} main
     filename: hashicorp
     state: present
   when: is_linux
