@@ -1,4 +1,4 @@
-verify: lint lint-ansible hooks
+verify: format lint lint-ansible hooks
 
 venv:
 	@python -m venv .venv
@@ -7,6 +7,10 @@ venv:
 install:
 	pip install -r requirements-dev.txt
 	ansible-galaxy install -r requirements.yml
+
+format:
+	pre-commit run --all-files yamlfmt
+	mdformat .
 
 lint:
 	yamllint .
