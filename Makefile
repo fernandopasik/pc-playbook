@@ -1,3 +1,5 @@
+verify: lint lint-ansible
+
 venv:
 	@python -m venv .venv
 	@echo 'run `. .venv/bin/activate` to develop'
@@ -12,5 +14,3 @@ lint:
 lint-ansible:
 	ansible-lint
 	ansible-playbook --syntax-check main.yml
-
-verify: lint lint-ansible
