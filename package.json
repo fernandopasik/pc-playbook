@@ -7,16 +7,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "clean": "del galaxy",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "setup": "ansible-playbook main.yml",
-    "verify": "npm run format:check"
-  },
-  "devDependencies": {
-    "del-cli": "^6.0.0",
-    "prettier": "^3.5.3",
-    "prettier-plugin-pkg": "^0.18.1",
-    "prettier-plugin-sh": "^0.15.0"
+    "setup": "ansible-playbook main.yml"
   }
 }
