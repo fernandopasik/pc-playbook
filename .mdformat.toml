@@ -1,0 +1,3 @@
+number=true
+wrap=100
+exclude = [".venv/**", "CODE_OF_CONDUCT.md"]
