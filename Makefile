@@ -21,3 +21,6 @@ lint-ansible:
 
 hooks:
 	pre-commit run --all-files
+
+start:
+	ansible-playbook main.yml
