@@ -1,4 +1,4 @@
-verify: lint lint-ansible
+verify: lint lint-ansible hooks
 
 venv:
 	@python -m venv .venv
@@ -14,3 +14,6 @@ lint:
 lint-ansible:
 	ansible-lint
 	ansible-playbook --syntax-check main.yml
+
+hooks:
+	pre-commit run --all-files
