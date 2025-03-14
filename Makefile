@@ -6,6 +6,7 @@ venv:
 
 install:
 	pip install -r requirements-dev.txt
+	pre-commit install
 	ansible-galaxy install -r requirements.yml
 
 format:
