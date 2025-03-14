@@ -13,16 +13,6 @@ Thumbs.db
 # local vscode config
 .vscode
 
-# npm
-node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
-pnpm-lock.yaml
-yarn.lock
-
 # build and temp folders
 /config.yml
 /inventory.ini

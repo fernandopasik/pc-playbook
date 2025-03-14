@@ -3,7 +3,6 @@
 profile: production
 exclude_paths:
   - .github
-  - node_modules
   - galaxy
   - .venv
 skip_list:
