@@ -13,9 +13,11 @@ Thumbs.db
 # local vscode config
 .vscode
 
-# build and temp folders
+# python
+.venv
+
+# ansible
 /config.yml
 /inventory.ini
 /galaxy
-/.venv
 /.ansible
