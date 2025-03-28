@@ -1,7 +1,6 @@
 ---
 extends: default
 ignore:
-  - galaxy
   - .ansible
   - .venv
 

@@ -2,8 +2,7 @@
 # .ansible-lint
 profile: production
 exclude_paths:
-  - .github
-  - galaxy
+  - .ansible
   - .venv
 skip_list:
   - latest[git]
