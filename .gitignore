@@ -17,7 +17,6 @@ Thumbs.db
 .venv
 
 # ansible
+/.ansible
 /config.yml
 /inventory.ini
-/galaxy
-/.ansible
