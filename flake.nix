@@ -13,6 +13,7 @@
       modules = [
         ./machines/uac
         nixos-wsl.nixosModules.wsl
+        ./modules/dev-tools
       ];
     };
   };

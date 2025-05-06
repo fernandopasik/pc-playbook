@@ -19,5 +19,5 @@
     ruby
     rustc
     jdk
-  ]
+  ];
 }
