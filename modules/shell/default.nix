@@ -23,7 +23,7 @@
         ];
       };
 
-      initExtra = ''
+      shellInit = ''
         # Cycle back in the suggestions menu using Shift+Tab
         bindkey '^[[Z' reverse-menu-complete
 
