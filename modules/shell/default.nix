@@ -10,7 +10,7 @@
 
   users.defaultUserShell = pkgs.zsh;
 
-  zsh = {
+  programs.zsh = {
       enable = true;
       enableCompletion = false;
       zplug = {
