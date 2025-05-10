@@ -19,6 +19,7 @@ format:
 
 lint:
 	yamllint .
+	nix shell nixpkgs#statix -c statix check
 
 lint-ansible:
 	ansible-lint
