@@ -37,3 +37,15 @@ repos:
         entry: nix flake check
         language: system
         pass_filenames: false
+      - id: nixfmt
+        name: Nix Format Check
+        entry: |
+          nix shell nixpkgs#nixfmt-rfc-style -c sh -c 'find . -name "*.nix" -exec nixfmt --strict --check {} +'
+        language: system
+        files: \.nix$
+
+      - id: statix
+        name: Nix Lint
+        entry: nix shell nixpkgs#statix -c statix check
+        language: system
+        pass_filenames: false
