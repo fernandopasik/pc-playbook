@@ -14,15 +14,6 @@
   programs.zsh = {
       enable = true;
       enableCompletion = false;
-      zplug = {
-        enable = true;
-        plugins = [
-          { name = "zsh-users/zsh-autosuggestions"; }
-          { name = "zsh-users/zsh-syntax-highlighting"; }
-          { name = "zsh-users/zsh-completions"; }
-          { name = "zsh-users/zsh-history-substring-search"; }
-        ];
-      };
 
       shellInit = ''
         # Cycle back in the suggestions menu using Shift+Tab
@@ -36,9 +27,18 @@
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
         zstyle ':completion:*' menu yes=long select
 
-        source $ZPLUG_HOME/repos/unixorn/warhol.plugin.zsh/warhol.plugin.zsh
         bindkey '^[[A' history-substring-search-up
         bindkey '^[[B' history-substring-search-down
+
+        export ZPLUG_HOME=$HOME/.zplug
+        source ${pkgs.zplug}/share/zplug/init.zsh
+
+        zplug "zsh-users/zsh-autosuggestions"
+        zplug "zsh-users/zsh-syntax-highlighting"
+        zplug "zsh-users/zsh-completions"
+        zplug "zsh-users/zsh-history-substring-search"
+
+        zplug load
 
       '';
     };
