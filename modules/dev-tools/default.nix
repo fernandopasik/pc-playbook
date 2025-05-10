@@ -15,6 +15,8 @@
     pyenv
     nodejs_23
     corepack_23
+    nodePackages.npm-check-updates
+    volta
     deno
     go
     ruby
