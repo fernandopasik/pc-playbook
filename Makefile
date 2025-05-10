@@ -15,6 +15,7 @@ check:
 format:
 	pre-commit run --all-files yamlfmt
 	mdformat .
+	nix shell nixpkgs#nixfmt-rfc-style -c sh -c 'find . -name "*.nix" -exec nixfmt --strict {} +'
 
 lint:
 	yamllint .
