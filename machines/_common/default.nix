@@ -2,15 +2,25 @@
 
 {
   environment.systemPackages = with pkgs; [
-    curl
-    gnupg
+    # monitoring and info
     htop
-    iperf3
     lsb-release
     neofetch
-    openssl
+
+    # networking
+    curl
+    iperf3
     rsync
     wget
+
+    # encryption
+    gnupg
+    openssl
+
+    # compression tools
+    bzip2
+    xz
+    zlib
   ];
 
   nix.settings.experimental-features = [
