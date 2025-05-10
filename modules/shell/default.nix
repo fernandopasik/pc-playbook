@@ -13,38 +13,38 @@
   users.defaultUserShell = pkgs.zsh;
 
   programs.zsh = {
-      enable = true;
-      enableCompletion = false;
+    enable = true;
+    enableCompletion = false;
 
-      shellInit = ''
-        # Cycle back in the suggestions menu using Shift+Tab
-        bindkey '^[[Z' reverse-menu-complete
+    shellInit = ''
+      # Cycle back in the suggestions menu using Shift+Tab
+      bindkey '^[[Z' reverse-menu-complete
 
-        bindkey '^B' autosuggest-toggle
-        # Make Ctrl+W remove one path segment instead of the whole path
-        WORDCHARS=''${WORDCHARS/\/}
+      bindkey '^B' autosuggest-toggle
+      # Make Ctrl+W remove one path segment instead of the whole path
+      WORDCHARS=''${WORDCHARS/\/}
 
-        # Highlight the selected suggestion
-        zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-        zstyle ':completion:*' menu yes=long select
+      # Highlight the selected suggestion
+      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+      zstyle ':completion:*' menu yes=long select
 
-        bindkey '^[[A' history-substring-search-up
-        bindkey '^[[B' history-substring-search-down
+      bindkey '^[[A' history-substring-search-up
+      bindkey '^[[B' history-substring-search-down
 
-        export ZPLUG_HOME=$HOME/.zplug
-        source ${pkgs.zplug}/share/zplug/init.zsh
+      export ZPLUG_HOME=$HOME/.zplug
+      source ${pkgs.zplug}/share/zplug/init.zsh
 
-        zplug "zsh-users/zsh-autosuggestions"
-        zplug "zsh-users/zsh-syntax-highlighting"
-        zplug "zsh-users/zsh-completions"
-        zplug "zsh-users/zsh-history-substring-search"
+      zplug "zsh-users/zsh-autosuggestions"
+      zplug "zsh-users/zsh-syntax-highlighting"
+      zplug "zsh-users/zsh-completions"
+      zplug "zsh-users/zsh-history-substring-search"
 
-        zplug load
+      zplug load
 
-      '';
-    };
+    '';
+  };
 
-    programs.starship = {
+  programs.starship = {
     enable = true;
     # Configuration written to ~/.config/starship.toml
     settings = {

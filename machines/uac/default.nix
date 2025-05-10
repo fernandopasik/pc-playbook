@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ../_common
-  ];
+  imports = [ ../_common ];
 
   networking.hostName = "uac";
 

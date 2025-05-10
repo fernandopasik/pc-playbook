@@ -6,16 +6,22 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
   };
 
-  outputs = { self, nixpkgs, nixos-wsl }: {
-    nixosConfigurations.uac = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-wsl,
+    }:
+    {
+      nixosConfigurations.uac = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-      modules = [
-        ./machines/uac
-        nixos-wsl.nixosModules.wsl
-        ./modules/shell
-        ./modules/dev-tools
-      ];
+        modules = [
+          ./machines/uac
+          nixos-wsl.nixosModules.wsl
+          ./modules/shell
+          ./modules/dev-tools
+        ];
+      };
     };
-  };
 }
