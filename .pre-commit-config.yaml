@@ -32,3 +32,8 @@ repos:
         entry: mdformat
         language: system
         types: [markdown]
+      - id: nix-flake-check
+        name: Nix Flake Check
+        entry: nix flake check
+        language: system
+        pass_filenames: false
