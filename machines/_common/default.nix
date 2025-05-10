@@ -6,6 +6,7 @@
     htop
     lsb-release
     neofetch
+    tree
 
     # networking
     curl

@@ -31,9 +31,12 @@
 
     # Tools
     gcc
+    jq
     libffi
     gnumake
     readline
     sqlite
+    tk
+    yq
   ];
 }
