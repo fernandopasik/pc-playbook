@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     zsh
+    zplug
     zsh-autosuggestions
     zsh-git-prompt
     zsh-syntax-highlighting
