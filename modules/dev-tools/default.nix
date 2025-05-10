@@ -29,7 +29,9 @@
     jdk
 
     # Tools
+    gcc
     libffi
+    gnumake
     readline
     sqlite
   ];
