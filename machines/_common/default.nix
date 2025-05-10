@@ -25,15 +25,11 @@
     zlib
   ];
 
-  environment.shellInit = ''
-    export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:${
-      pkgs.lib.makeSearchPath "pkgconfig" [
-        pkgs.zlib
-        pkgs.openssl
-        pkgs.bzip2
-      ]
-    }
-  '';
+  environment.variables.PKG_CONFIG_PATH = pkgs.lib.makeSearchPath "pkgconfig" [
+    pkgs.zlib
+    pkgs.openssl
+    pkgs.bzip2
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
