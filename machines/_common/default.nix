@@ -25,7 +25,7 @@
     zlib
   ];
 
-  environment.variables.PKG_CONFIG_PATH = pkgs.lib.makeSearchPath "lib/pkgconfig" [
+  environment.variables.PKG_CONFIG_PATH = pkgs.lib.makeSearchPathOutput "dev" "lib/pkgconfig" [
     pkgs.zlib
     pkgs.openssl
     pkgs.bzip2
