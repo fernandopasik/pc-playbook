@@ -7,6 +7,7 @@
     zsh-autosuggestions
     zsh-git-prompt
     zsh-syntax-highlighting
+    starship
   ];
 
   users.defaultUserShell = pkgs.zsh;
@@ -42,4 +43,12 @@
 
       '';
     };
+
+    programs.starship = {
+    enable = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      add_newline = true;
+    };
+  };
 }
