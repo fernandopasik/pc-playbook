@@ -6,6 +6,7 @@
     htop
     lsb-release
     neofetch
+    pkg-config
     tree
 
     # networking
