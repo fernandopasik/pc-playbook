@@ -16,14 +16,21 @@
     bun
     deno
 
-    # Programming languages
+    # Python
     python3
     python3Packages.pip
     python3Packages.virtualenv
     pyenv
+
+    # Programming languages
     go
     ruby
     rustc
     jdk
+
+    # Tools
+    libffi
+    readline
+    sqlite
   ];
 }
