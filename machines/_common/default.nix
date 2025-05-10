@@ -27,8 +27,8 @@
 
   environment.variables.PKG_CONFIG_PATH = pkgs.lib.makeSearchPath "lib/pkgconfig" [
     pkgs.zlib.dev
-    # pkgs.openssl.dev
-    # pkgs.bzip2.dev
+    pkgs.openssl.dev
+    pkgs.bzip2.dev
   ];
 
   nix.settings.experimental-features = [
