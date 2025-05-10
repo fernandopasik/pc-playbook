@@ -13,7 +13,8 @@
     python3Packages.pip
     python3Packages.virtualenv
     pyenv
-    nodejs
+    nodejs_23
+    corepack_23
     deno
     go
     ruby
