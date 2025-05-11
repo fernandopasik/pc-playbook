@@ -39,4 +39,13 @@
     tk
     yq
   ];
+
+  environment.variables.PKG_CONFIG_PATH = pkgs.lib.makeSearchPath "lib/pkgconfig" [
+    pkgs.zlib.dev
+    pkgs.openssl.dev
+    pkgs.bzip2.dev
+    pkgs.libffi.dev
+    pkgs.readline.dev
+    pkgs.sqlite.dev
+  ];
 }
