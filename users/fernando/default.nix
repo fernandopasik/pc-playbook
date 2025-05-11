@@ -9,4 +9,14 @@
       "docker"
     ];
   };
+
+  home-manager.users.fernando =
+    { pkgs, ... }:
+    {
+      home = {
+        homeDirectory = "/home/fernando";
+        stateVersion = "24.11";
+        username = "fernando";
+      };
+    };
 }

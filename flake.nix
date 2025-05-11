@@ -4,11 +4,13 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
   };
 
   outputs =
     {
       self,
+      home-manager,
       nixos-wsl,
       nixpkgs,
     }:
@@ -19,6 +21,7 @@
         modules = [
           ./machines/uac
           nixos-wsl.nixosModules.wsl
+          home-manager.nixosModules.home-manager
           ./modules/shell
           ./modules/dev-tools
           ./users/fernando
