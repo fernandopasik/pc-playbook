@@ -6,5 +6,5 @@
   networking.hostName = "uac";
 
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = "fernando";
 }
