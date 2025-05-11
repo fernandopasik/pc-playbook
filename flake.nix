@@ -9,8 +9,8 @@
   outputs =
     {
       self,
-      nixpkgs,
       nixos-wsl,
+      nixpkgs,
     }:
     {
       nixosConfigurations.uac = nixpkgs.lib.nixosSystem {
@@ -21,6 +21,7 @@
           nixos-wsl.nixosModules.wsl
           ./modules/shell
           ./modules/dev-tools
+          ./users/fernando
         ];
       };
     };
