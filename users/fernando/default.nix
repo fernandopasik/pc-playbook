@@ -46,7 +46,7 @@
             git -C "$DOTFILES_DIR" pull --rebase
           fi
 
-          ln -sf "$DOTFILES_DIR/gitconfig" "$HOME/.gitconfig"
+          ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
         '';
       };
     };
