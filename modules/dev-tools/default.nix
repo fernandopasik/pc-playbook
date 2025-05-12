@@ -23,6 +23,7 @@
     python313Packages.setuptools
     python313Packages.virtualenv
     pyenv
+    pipenv
 
     # Programming languages
     go
