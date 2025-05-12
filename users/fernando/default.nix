@@ -28,6 +28,8 @@
         stateVersion = "24.11";
         username = "fernando";
 
+        packages = with pkgs; [ git ];
+
         file."repos/.keep".text = "";
         file.".zshrc".text = "";
 
