@@ -29,6 +29,7 @@
         username = "fernando";
 
         file."repos/.keep".text = "";
+        file.".zshrc".text = "";
 
         activation.cloneDotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
           DOTFILES_DIR="$HOME/repos/dotfiles"
