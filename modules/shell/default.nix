@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     zsh
-    zplug
     zsh-autosuggestions
     zsh-git-prompt
     zsh-syntax-highlighting
@@ -34,16 +33,6 @@
 
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
-
-      export ZPLUG_HOME=$HOME/.zplug
-      source ${pkgs.zplug}/share/zplug/init.zsh
-
-      zplug "zsh-users/zsh-autosuggestions"
-      zplug "zsh-users/zsh-syntax-highlighting"
-      zplug "zsh-users/zsh-completions"
-      zplug "zsh-users/zsh-history-substring-search"
-
-      zplug load
 
     '';
   };
