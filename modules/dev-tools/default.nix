@@ -11,6 +11,7 @@
     # Node.js
     nodejs_23
     corepack_23
+    nodePackages.npm
     nodePackages.npm-check-updates
     nodePackages.yo
     bun
