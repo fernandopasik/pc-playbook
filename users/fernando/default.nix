@@ -17,6 +17,8 @@
         homeDirectory = "/home/fernando";
         stateVersion = "24.11";
         username = "fernando";
+
+        file."repos/.keep".text = "";
       };
     };
 }
