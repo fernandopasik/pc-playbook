@@ -34,7 +34,9 @@
 
         file = {
           "repos/.keep".text = "";
-          ".zshrc".text = "";
+          ".zshrc".text = ''
+            . ~/repos/dotfiles/utils.sh
+          '';
           ".gitconfig.local".text = ''
             [user]
               name = Fernando Pasik
