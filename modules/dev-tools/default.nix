@@ -18,10 +18,10 @@
     deno
 
     # Python
-    python3
-    python3Packages.pip
-    python3Packages.setuptools
-    python3Packages.virtualenv
+    python313
+    python313Packages.pip
+    python313Packages.setuptools
+    python313Packages.virtualenv
     pyenv
 
     # Programming languages
