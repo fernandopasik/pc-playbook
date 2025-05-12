@@ -41,6 +41,12 @@
             [user]
               name = Fernando Pasik
               email = fernando@pasik.com.ar
+            [credential "https://github.com"]
+              helper =
+              helper = !/run/current-system/sw/bin/gh auth git-credential
+            [credential "https://gist.github.com"]
+              helper =
+              helper = !/run/current-system/sw/bin/gh auth git-credential
           '';
         };
 
