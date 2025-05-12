@@ -9,8 +9,8 @@
     act
 
     # Node.js
-    nodejs_23
-    corepack_23
+    nodejs_24
+    corepack_24
     nodePackages.npm
     nodePackages.npm-check-updates
     nodePackages.yo
