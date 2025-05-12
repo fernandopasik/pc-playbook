@@ -34,6 +34,7 @@
         file.".zshrc".text = "";
 
         activation.cloneDotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+          export PATH=${pkgs.git}/bin:$PATH
           DOTFILES_DIR="$HOME/repos/dotfiles"
           if [ ! -d "$DOTFILES_DIR" ]; then
             echo "🧰 Cloning dotfiles into $DOTFILES_DIR"
