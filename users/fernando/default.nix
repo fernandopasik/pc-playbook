@@ -32,8 +32,15 @@
 
         packages = with pkgs; [ git ];
 
-        file."repos/.keep".text = "";
-        file.".zshrc".text = "";
+        file = {
+          "repos/.keep".text = "";
+          ".zshrc".text = "";
+          ".gitconfig.local".text = ''
+            [user]
+              name = Fernando Pasik
+              email = fernando@pasik.com.ar
+          '';
+        };
 
         activation.cloneDotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
           export PATH=${pkgs.git}/bin:$PATH
