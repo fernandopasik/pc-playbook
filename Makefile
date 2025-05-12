@@ -30,3 +30,6 @@ hooks:
 
 start:
 	ansible-playbook main.yml
+
+run:
+	sudo nixos-rebuild switch --flake .#uac --refresh
