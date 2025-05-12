@@ -14,7 +14,11 @@
 
   programs.zsh = {
     enable = true;
-    enableCompletion = false;
+    enableCompletion = true;
+    enableBashCompletion = true;
+    enableGlobalCompInit = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
 
     shellInit = ''
       # Cycle back in the suggestions menu using Shift+Tab
