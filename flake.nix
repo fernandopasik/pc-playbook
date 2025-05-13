@@ -18,10 +18,13 @@
       nixosConfigurations.uac = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
+        specialArgs = {
+          wslModule = nixos-wsl.nixosModules.wsl;
+          homeManagerModule = home-manager.nixosModules.home-manager;
+        };
+
         modules = [
           ./machines/uac
-          nixos-wsl.nixosModules.wsl
-          home-manager.nixosModules.home-manager
           ./users/fernando
         ];
       };

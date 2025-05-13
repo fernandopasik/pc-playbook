@@ -1,7 +1,15 @@
-{ config, pkgs, ... }:
+{
+  config,
+  homeManagerModule,
+  pkgs,
+  wslModule,
+  ...
+}:
 
 {
   imports = [
+    wslModule
+    homeManagerModule
     ../_common
     ../../modules/shell
     ../../modules/dev-tools
