@@ -31,5 +31,8 @@ hooks:
 start:
 	ansible-playbook main.yml
 
-run:
-	sudo nixos-rebuild switch --flake .#uac --refresh
+rebuild-nixos:
+	sudo nixos-rebuild switch --refresh --flake .#uac
+
+rebuild-darwin:
+	sudo darwin-rebuild switch --refresh --flake .#deimos
