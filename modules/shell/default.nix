@@ -5,6 +5,7 @@
     zsh
     zsh-autosuggestions
     zsh-git-prompt
+    zsh-history-substring-search
     zsh-syntax-highlighting
     starship
   ];
@@ -19,21 +20,17 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellInit = ''
-      # Cycle back in the suggestions menu using Shift+Tab
-      bindkey '^[[Z' reverse-menu-complete
+    interactiveShellInit = ''
+      setopt HIST_IGNORE_ALL_DUPS
+      setopt HIST_REDUCE_BLANKS
+      setopt HIST_SAVE_NO_DUPS
 
-      bindkey '^B' autosuggest-toggle
-      # Make Ctrl+W remove one path segment instead of the whole path
-      WORDCHARS=''${WORDCHARS/\/}
+      source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-      # Highlight the selected suggestion
-      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-      zstyle ':completion:*' menu yes=long select
-
+      bindkey '^[OA' history-substring-search-up
       bindkey '^[[A' history-substring-search-up
+      bindkey '^[OB' history-substring-search-down
       bindkey '^[[B' history-substring-search-down
-
     '';
   };
 
