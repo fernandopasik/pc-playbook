@@ -21,6 +21,7 @@
     syntaxHighlighting.enable = true;
 
     interactiveShellInit = ''
+      unsetopt EXTENDED_HISTORY
       setopt HIST_IGNORE_ALL_DUPS
       setopt HIST_REDUCE_BLANKS
       setopt HIST_SAVE_NO_DUPS
