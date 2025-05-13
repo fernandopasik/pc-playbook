@@ -27,7 +27,7 @@
     {
       home = {
         homeDirectory = "/home/fernando";
-        stateVersion = "24.11";
+        stateVersion = "25.05";
         username = "fernando";
 
         packages = with pkgs; [ git ];
@@ -62,6 +62,7 @@
           fi
 
           ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
+          ln -sf "$DOTFILES_DIR/.ghconfig.yml" "$HOME/.config/gh/config.yml"
         '';
       };
     };
