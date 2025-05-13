@@ -34,5 +34,17 @@
           ./users/fernando
         ];
       };
+
+      nixosConfigurations.Deimos = nixpkgs.lib.darwinSystem {
+        system = "x86_64-darwin";
+
+        specialArgs = {
+          homeManagerModule = home-manager.nixosModules.home-manager;
+        };
+
+        modules = [
+          ./machines/deimos
+        ];
+      };
     };
 }
