@@ -22,8 +22,6 @@
           ./machines/uac
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
-          ./modules/shell
-          ./modules/dev-tools
           ./users/fernando
         ];
       };

@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../_common ];
+  imports = [
+    ../_common
+    ../../modules/shell
+    ../../modules/dev-tools
+  ];
 
   networking.hostName = "uac";
 
