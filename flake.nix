@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +21,7 @@
     {
       self,
       home-manager,
+      nix-darwin,
       nixos-wsl,
       nixpkgs,
     }:
@@ -35,7 +40,7 @@
         ];
       };
 
-      nixosConfigurations.Deimos = nixpkgs.lib.darwinSystem {
+      darwinConfigurations.Deimos = nix-darwin.lib.darwinSystem {
         system = "x86_64-darwin";
 
         specialArgs = {
