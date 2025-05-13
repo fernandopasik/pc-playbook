@@ -35,4 +35,4 @@ rebuild-nixos:
 	sudo nixos-rebuild switch --refresh --flake .#uac
 
 rebuild-darwin:
-	sudo darwin-rebuild switch --refresh --flake .#deimos
+	sudo darwin-rebuild switch --refresh --flake .#Deimos
