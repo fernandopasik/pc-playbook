@@ -42,7 +42,9 @@ in
 
   system.stateVersion = if isDarwin then 6 else "25.05";
 
-  programs.nix-ld = lib.mkIf isLinux {
+}
+// lib.mkIf isLinux {
+  programs.nix-ld = {
     enable = true;
     package = pkgs.nix-ld-rs;
   };
