@@ -44,7 +44,7 @@
         system = "x86_64-darwin";
 
         specialArgs = {
-          homeManagerModule = home-manager.nixosModules.home-manager;
+          homeManagerModule = home-manager.darwinModules.home-manager;
         };
 
         modules = [ ./machines/deimos ];
