@@ -1,33 +1,40 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   isDarwin = pkgs.stdenv.isDarwin;
   isLinux = pkgs.stdenv.isLinux;
-in {
-  environment.systemPackages = with pkgs; [
-    # monitoring and info
-    htop
-    neofetch
-    pkg-config
-    tree
+in
+{
+  environment.systemPackages =
+    with pkgs;
+    [
+      # monitoring and info
+      htop
+      neofetch
+      pkg-config
+      tree
 
-    # networking
-    curl
-    iperf3
-    rsync
-    wget
+      # networking
+      curl
+      iperf3
+      rsync
+      wget
 
-    # encryption
-    gnupg
-    openssl
+      # encryption
+      gnupg
+      openssl
 
-    # compression tools
-    bzip2
-    xz
-    zlib
-  ] ++ lib.optionals isLinux [
-    lsb-release
-  ];
+      # compression tools
+      bzip2
+      xz
+      zlib
+    ]
+    ++ lib.optionals isLinux [ lsb-release ];
 
   nix.settings.experimental-features = [
     "nix-command"
