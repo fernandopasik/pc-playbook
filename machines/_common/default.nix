@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     # monitoring and info
     htop
-    lsb-release
     neofetch
     pkg-config
     tree
