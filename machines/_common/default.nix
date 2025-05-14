@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
+  isDarwin = pkgs.stdenv.isDarwin;
   isLinux = pkgs.stdenv.isLinux;
 in {
   environment.systemPackages = with pkgs; [
@@ -24,7 +25,7 @@ in {
     bzip2
     xz
     zlib
-  ] ++ lib.optionals pkgs.stdenv.isLinux [
+  ] ++ lib.optionals isLinux [
     lsb-release
   ];
 
@@ -33,9 +34,9 @@ in {
     "flakes"
   ];
 
-  system.stateVersion = if pkgs.stdenv.isDarwin then 6 else "25.05";
-} // lib.mkIf isLinux {
-  programs.nix-ld = {
+  system.stateVersion = if isDarwin then 6 else "25.05";
+
+  programs.nix-ld = lib.mkIf isLinux {
     enable = true;
     package = pkgs.nix-ld-rs;
   };
