@@ -17,6 +17,11 @@
 
   networking.hostName = "uac";
 
+  programs.nix-ld = {
+    enable = true;
+    package = pkgs.nix-ld-rs;
+  };
+
   wsl.enable = true;
   wsl.defaultUser = "fernando";
 }
