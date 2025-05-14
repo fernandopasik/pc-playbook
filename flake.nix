@@ -47,9 +47,7 @@
           homeManagerModule = home-manager.nixosModules.home-manager;
         };
 
-        modules = [
-          ./machines/deimos
-        ];
+        modules = [ ./machines/deimos ];
       };
     };
 }
