@@ -13,6 +13,7 @@
     ../_common
     ../../modules/shell
     ../../modules/dev-tools
+    ../../modules/wsl
   ];
 
   networking.hostName = "uac";
@@ -21,7 +22,4 @@
     enable = true;
     package = pkgs.nix-ld-rs;
   };
-
-  wsl.enable = true;
-  wsl.defaultUser = "fernando";
 }
