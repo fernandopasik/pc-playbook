@@ -36,3 +36,6 @@ rebuild-nixos:
 
 rebuild-darwin:
 	sudo darwin-rebuild switch --refresh --flake .#Deimos
+
+flake-update:
+	nix flake update
