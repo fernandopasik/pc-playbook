@@ -63,6 +63,7 @@
 
           ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
           ln -sf "$DOTFILES_DIR/.ghconfig.yml" "$HOME/.config/gh/config.yml"
+          ln -sf "$DOTFILES_DIR/.starship.toml" "$HOME/.config/starship.toml"
         '';
       };
     };

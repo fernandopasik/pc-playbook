@@ -32,14 +32,8 @@
       bindkey '^[[A' history-substring-search-up
       bindkey '^[OB' history-substring-search-down
       bindkey '^[[B' history-substring-search-down
-    '';
-  };
 
-  programs.starship = {
-    enable = true;
-    # Configuration written to ~/.config/starship.toml
-    settings = {
-      add_newline = true;
-    };
+      eval "$(starship init zsh)"
+    '';
   };
 }
