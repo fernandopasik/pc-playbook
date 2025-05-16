@@ -1,5 +1,12 @@
-{ config, pkgs, ... }:
-
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  inherit (pkgs.stdenv) isDarwin isLinux;
+in
 {
   environment.systemPackages = with pkgs; [
     zsh
@@ -12,26 +19,34 @@
 
   users.defaultUserShell = pkgs.zsh;
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableBashCompletion = true;
-    enableGlobalCompInit = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
+  programs.zsh = lib.mkMerge [
+    {
+      enable = true;
+      enableCompletion = true;
+      enableBashCompletion = true;
+      enableGlobalCompInit = true;
 
-    interactiveShellInit = ''
-      unsetopt EXTENDED_HISTORY
-      setopt HIST_IGNORE_ALL_DUPS
-      setopt HIST_REDUCE_BLANKS
-      setopt HIST_SAVE_NO_DUPS
+      interactiveShellInit = ''
+        unsetopt EXTENDED_HISTORY
+        setopt HIST_IGNORE_ALL_DUPS
+        setopt HIST_REDUCE_BLANKS
+        setopt HIST_SAVE_NO_DUPS
 
-      source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+        source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-      bindkey '^[OA' history-substring-search-up
-      bindkey '^[[A' history-substring-search-up
-      bindkey '^[OB' history-substring-search-down
-      bindkey '^[[B' history-substring-search-down
-    '';
-  };
+        bindkey '^[OA' history-substring-search-up
+        bindkey '^[[A' history-substring-search-up
+        bindkey '^[OB' history-substring-search-down
+        bindkey '^[[B' history-substring-search-down
+      '';
+    }
+    (lib.mkIf isLinux {
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+    })
+    (lib.mkIf isDarwin {
+      enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
+    })
+  ];
 }
