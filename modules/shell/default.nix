@@ -17,7 +17,7 @@ in
     starship
   ];
 
-  users.defaultUserShell = lib.mkIf isLinux pkgs.zsh;
+  users = lib.optionalAttrs isLinux { defaultUserShell = pkgs.zsh; };
 
   programs.zsh = lib.mkMerge [
     {
