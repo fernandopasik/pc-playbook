@@ -6,24 +6,28 @@
 }:
 let
   inherit (pkgs.stdenv) isDarwin isLinux;
+
+  username = "fernando";
+  homeDir = if isDarwin then "/Users/${username}" else "/home/${username}";
 in
 {
-  users.users.fernando = lib.mkMerge [
-    { shell = pkgs.zsh; }
+  users.users.${username} = lib.mkMerge [
+    {
+      shell = pkgs.zsh;
+      home = homeDir;
+    }
     (lib.mkIf isLinux {
       isNormalUser = true;
-      home = "/home/fernando";
       extraGroups = [
         "wheel"
         "docker"
       ];
     })
-    (lib.mkIf isDarwin { home = "/Users/fernando"; })
   ];
 
   environment.systemPackages = with pkgs; [ git ];
 
-  home-manager.users.fernando =
+  home-manager.users.${username} =
     {
       pkgs,
       lib,
@@ -32,9 +36,9 @@ in
     }:
     {
       home = {
-        homeDirectory = "/home/fernando";
+        homeDirectory = homeDir;
         stateVersion = "25.05";
-        username = "fernando";
+        inherit username;
 
         packages = with pkgs; [ git ];
 
