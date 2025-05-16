@@ -4,16 +4,22 @@
   config,
   ...
 }:
+let
+  inherit (pkgs.stdenv) isDarwin isLinux;
+in
 {
-  users.users.fernando = {
-    isNormalUser = true;
-    home = "/home/fernando";
-    shell = pkgs.zsh;
-    extraGroups = [
-      "wheel"
-      "docker"
-    ];
-  };
+  users.users.fernando = lib.mkMerge [
+    { shell = pkgs.zsh; }
+    (lib.mkIf isLinux {
+      isNormalUser = true;
+      home = "/home/fernando";
+      extraGroups = [
+        "wheel"
+        "docker"
+      ];
+    })
+    (lib.mkIf isDarwin { home = "/Users/fernando"; })
+  ];
 
   environment.systemPackages = with pkgs; [ git ];
 
