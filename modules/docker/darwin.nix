@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  homebrew.caskApps = [ "docker" ];
+  homebrew.casks = [ "docker" ];
 }
