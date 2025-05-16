@@ -75,8 +75,10 @@ in
           fi
 
           ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
-          ln -sf "$DOTFILES_DIR/.ghconfig.yml" "$HOME/.config/gh/config.yml"
+          mkdir -p "$HOME/.config"
           ln -sf "$DOTFILES_DIR/.starship.toml" "$HOME/.config/starship.toml"
+          mkdir -p "$HOME/.config/gh"
+          ln -sf "$DOTFILES_DIR/.ghconfig.yml" "$HOME/.config/gh/config.yml"
         '';
       };
     };
