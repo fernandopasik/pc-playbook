@@ -31,6 +31,13 @@
     rustc
     jdk
 
+    # Infrastructure
+    dive
+    hadolint
+    kubectl
+    kubernetes-helm
+    minikube
+
     # Tools
     gcc
     jq
