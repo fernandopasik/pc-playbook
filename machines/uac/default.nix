@@ -13,6 +13,7 @@
     ../_common
     ../../modules/shell
     ../../modules/dev-tools
+    ../../modules/docker
     ../../modules/wsl
   ];
 

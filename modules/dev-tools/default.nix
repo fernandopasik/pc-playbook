@@ -50,10 +50,4 @@
     pkgs.readline.dev
     pkgs.sqlite.dev
   ];
-
-  virtualisation.docker = {
-    enable = true;
-    rootless.enable = true;
-    rootless.setSocketVariable = true;
-  };
 }
