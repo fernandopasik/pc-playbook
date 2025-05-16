@@ -11,6 +11,7 @@
     wslModule
     homeManagerModule
     ../_common
+    ../_common/linux.nix
     ../../modules/shell
     ../../modules/dev-tools
     ../../modules/docker
