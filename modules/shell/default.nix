@@ -40,11 +40,11 @@ in
         bindkey '^[[B' history-substring-search-down
       '';
     }
-    (lib.mkIf isLinux {
+    (lib.optionalAttrs isLinux {
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
     })
-    (lib.mkIf isDarwin {
+    (lib.optionalAttrs isDarwin {
       enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
     })
