@@ -12,6 +12,7 @@
     ../_common/darwin.nix
     ../../modules/shell
     ../../modules/dev-tools
+    ../../modules/docker/darwin.nix
   ];
 
   networking.hostName = "Deimos";
