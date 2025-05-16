@@ -47,7 +47,10 @@
           homeManagerModule = home-manager.darwinModules.home-manager;
         };
 
-        modules = [ ./machines/deimos ];
+        modules = [
+          ./machines/deimos
+          ./users/fernando
+        ];
       };
     };
 }
