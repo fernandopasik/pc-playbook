@@ -31,10 +31,8 @@
   community.general.homebrew_cask:
     name: '{{ item }}'
   loop:
-    - coconutbattery
     - google-drive
     - logi-options-plus
-    - smcfancontrol
     - rectangle
     - spotify
     - stats
