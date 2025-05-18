@@ -8,5 +8,8 @@
     # Browsers
     "firefox"
     "microsoft-edge"
+
+    # Chat
+    "slack"
   ];
 }
