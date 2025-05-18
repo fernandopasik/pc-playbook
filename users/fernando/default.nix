@@ -26,31 +26,30 @@ in
   ];
 
   security.sudo =
-    {
-      enable = true;
-    }
-    // lib.optionalAttrs isDarwin {
-      extraConfig = ''
-        Defaults:fernando !requiretty
-        fernando ALL=(ALL) NOPASSWD:SETENV: ALL
-      '';
-    }
-    // lib.optionalAttrs isLinux {
-      extraRules = [
-        {
-          users = [ "fernando" ];
-          commands = [
-            {
-              command = "ALL";
-              options = [
-                "NOPASSWD"
-                "SETENV"
-              ];
-            }
-          ];
-        }
-      ];
-    };
+    if isDarwin then
+      {
+        extraConfig = ''
+          Defaults:fernando !requiretty
+          fernando ALL=(ALL) NOPASSWD:SETENV: ALL
+        '';
+      }
+    else
+      {
+        extraRules = [
+          {
+            users = [ "fernando" ];
+            commands = [
+              {
+                command = "ALL";
+                options = [
+                  "NOPASSWD"
+                  "SETENV"
+                ];
+              }
+            ];
+          }
+        ];
+      };
 
   environment.systemPackages = with pkgs; [ git ];
 
