@@ -49,6 +49,9 @@
     yq
   ];
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg: builtins.elem (builtins.parseDrvName pkg.name).name [ "terraform" ];
+
   environment.variables.PKG_CONFIG_PATH = pkgs.lib.makeSearchPath "lib/pkgconfig" [
     pkgs.zlib.dev
     pkgs.openssl.dev
