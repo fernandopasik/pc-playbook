@@ -4,7 +4,9 @@
   pkgs,
   ...
 }:
-
+let
+  hostname = "Deimos";
+in
 {
   imports = [
     homeManagerModule
@@ -17,5 +19,18 @@
     ../../modules/apps/darwin.nix
   ];
 
-  networking.hostName = "Deimos";
+  networking = {
+    hostName = hostname;
+    computerName = hostname;
+    localHostName = hostname;
+  };
+
+  system = {
+    defaults = {
+      smb = {
+        NetBIOSName = hostname;
+        ServerDescription = hostname;
+      };
+    };
+  };
 }
