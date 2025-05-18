@@ -28,7 +28,5 @@
     - git
     - github
     - shell
-    - python
-    - node
     - role: macos
       when: ansible_distribution == 'MacOSX'

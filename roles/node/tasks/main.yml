@@ -1,9 +1,0 @@
----
-- name: Install node
-  ansible.builtin.include_tasks: node.yml
-
-- name: Install and configure nvm
-  ansible.builtin.include_tasks: nvm.yml
-
-- name: Update and configure npm and install global packages
-  ansible.builtin.include_tasks: npm.yml

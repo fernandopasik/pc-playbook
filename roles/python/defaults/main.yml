@@ -1,9 +1,0 @@
----
-pip_recommended_packages:
-  - pip
-  - ansible
-  - ansible-lint
-  - Jinja2
-  - jmespath
-  - molecule
-  - yamllint
