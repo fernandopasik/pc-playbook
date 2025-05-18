@@ -5,6 +5,9 @@
     # IDE
     "visual-studio-code"
 
+    # Fonts
+    "font-jetbrains-mono"
+
     # Browsers
     "firefox"
     "microsoft-edge"
