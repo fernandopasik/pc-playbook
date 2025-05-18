@@ -25,8 +25,5 @@
       when: ansible_distribution == 'MacOSX'
     - package_manager
     - system
-    - git
-    - github
-    - shell
     - role: macos
       when: ansible_distribution == 'MacOSX'

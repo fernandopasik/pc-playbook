@@ -1,4 +1,0 @@
----
-repos_dir: ~/repos
-dotfiles_dir: '{{ repos_dir }}/dotfiles'
-dotfiles_repo: https://github.com/{{ github_username }}/dotfiles.git
