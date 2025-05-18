@@ -25,6 +25,21 @@ in
     })
   ];
 
+  security.sudo.extraRules = [
+    {
+      users = [ "fernando" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
+      ];
+    }
+  ];
+
   environment.systemPackages = with pkgs; [ git ];
 
   home-manager.users.${username} =
