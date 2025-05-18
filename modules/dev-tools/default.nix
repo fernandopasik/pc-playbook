@@ -37,6 +37,7 @@
     kubectl
     kubernetes-helm
     minikube
+    qemu
 
     # Tools
     gcc
